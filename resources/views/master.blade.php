@@ -15,6 +15,9 @@
             height: 500px;
             padding-top: 100px; 
         }
+        .footer{
+            text-align:center;
+        }
     </style>
 </head>
 <body>

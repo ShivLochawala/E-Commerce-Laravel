@@ -1,20 +1,31 @@
-@extends('master')
+@extends('master2')
 @section('content')
-<div class="container-fluid custom-container">
-    <div class="row"> 
-        <div class="col-sm-4 col-sm-offset-4">
-            <form>
+<div class="container-fluid custom-container login_panel">
+    
+            <form method="POST" action="login-user">
+            @csrf
+            <h1>Login</h1>
             <div class="form-group">
                 <!--<label for="exampleInputEmail1">Email ID</label>-->
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email ID">
+                <input type="email" class="form-control" name="email" id="Email" aria-describedby="emailHelp" placeholder="Email ID" value="{{old('email')}}">
+                @if ($errors->has('email'))
+                    <span class="error">{{ $errors->first('email') }}</span>
+                @endif
             </div>
             <div class="form-group">
-                <!--<label for="exampleInputPassword1">Password</label>-->
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input type="password" class="form-control" name="password" id="Password" placeholder="Password" value="{{old('password')}}">
+                @if ($errors->has('password'))
+                    <span class="error">{{ $errors->first('password') }}</span>
+                @endif
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+            <div class="form-group">
+                <a href="register">You are new?</a>
+            </div>
+            
             </form>
-        </div>
-    </div>
+       
 </div>
 @endsection('content')

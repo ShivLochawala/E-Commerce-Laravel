@@ -12,8 +12,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*Login Route */
 Route::get('/', function () {
-    return view('login');
+    return redirect('login');
     //return view('welcome');
 });
+Route::get('login','UserController@login')->name('login');
+Route::post('login-user','UserController@loginUser')->name('login-user');
+
+/*Registration Route */
+Route::get('register', 'UserController@register')->name('register');
+Route::post('register-user', 'UserController@registerUser')->name('register-user');
+
+/*Product Page */
+Route::get('home','ProductController@product')->name('home');
