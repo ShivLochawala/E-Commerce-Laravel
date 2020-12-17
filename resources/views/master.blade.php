@@ -15,6 +15,35 @@
             height: 500px;
             padding-top: 100px; 
         }
+        img.slider-img{
+            height: 400px !important;
+        }
+        .custom-product{
+            height: 600px;
+        }
+        .slider-text{
+            background-color: #634d4d8a;
+        }
+        .trending-wrapper{
+            margin: 30px;
+        }
+        .trending-wrapper h3{
+            text-align: center;
+        }
+        .trending-image{
+            height: 100px;
+        }
+        .trending-item{
+            float: left;
+            width: 20%;
+            text-align: center;
+        }
+        .productDetail-img{
+            height: 250px;
+        }
+        .search-box{
+            width: 500px !important;
+        }
         .footer{
             text-align:center;
         }

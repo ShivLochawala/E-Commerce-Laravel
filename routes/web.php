@@ -26,3 +26,9 @@ Route::post('register-user', 'UserController@registerUser')->name('register-user
 
 /*Product Page */
 Route::get('home','ProductController@product')->name('home');
+
+/*Product Details Page */
+Route::get('product-details/{id}','ProductController@productDetails')->name('product-details');
+
+/* Searching */
+Route::post('searching','ProductController@productSearch')->name('searching');

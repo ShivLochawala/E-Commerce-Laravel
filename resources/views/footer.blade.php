@@ -1,4 +1,4 @@
-<div class="panel panel-default footer">
+<div style="clear:both;" class="panel panel-default footer">
   <div class="panel-body">
     E-Commerce
   </div>
