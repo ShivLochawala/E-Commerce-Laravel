@@ -20,7 +20,12 @@
                         </div>
                     </div>
                     <div class="col-sm-3">
-                        <button class="btn btn-warning">Remove to Cart</button>
+                        <form action="/remove-to-cart" method="post">
+                            @csrf
+                            <input type="hidden" name="cart_id" value="{{$CartList->cart_id}}">
+                            <button class="btn btn-warning">Remove to Cart</button>
+                        </form>
+                        
                     </div>
                 </div>
                 
