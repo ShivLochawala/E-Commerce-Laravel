@@ -28,8 +28,8 @@
                         
                     </div>
                 </div>
-                
                 @endforeach
+                <a href="/order-now" class="btn btn-success">Order Now</a><br><br>
                 @else
                     <h4>You are not login</h4>
                     <a href='/login'>You want login?</a>
