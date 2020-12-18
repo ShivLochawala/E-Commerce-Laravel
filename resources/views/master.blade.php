@@ -70,6 +70,11 @@
         .profile-menu li a{
             color:black !important;
         }
+        .cart-list-divider{
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
         .footer{
             text-align:center;
         }

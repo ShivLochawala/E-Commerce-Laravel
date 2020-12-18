@@ -38,3 +38,4 @@ Route::post('searching','ProductController@productSearch')->name('searching');
 
 /* Add to Cart */
 Route::post('add-to-cart','ProductController@addToCart')->name('add-to-cart');
+Route::get('cart-list','ProductController@addToCartList')->name('cart-list');

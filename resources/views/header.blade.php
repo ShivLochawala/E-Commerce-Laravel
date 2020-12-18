@@ -46,7 +46,7 @@
         <button type="submit" class="btn btn-default">Search</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Cart({{$countCart}})</a></li>
+        <li><a href="/cart-list">Cart({{$countCart}})</a></li>
         @if(!session()->has('user'))
         <li><a href="/login">Login</a></li>
         @else
