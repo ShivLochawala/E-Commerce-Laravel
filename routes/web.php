@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 /*Login Route */
 Route::get('/', function () {
-    return redirect('login');
+    return redirect('home');
     //return view('welcome');
 });
 Route::get('login','UserController@login')->name('login');
@@ -32,3 +32,6 @@ Route::get('product-details/{id}','ProductController@productDetails')->name('pro
 
 /* Searching */
 Route::post('searching','ProductController@productSearch')->name('searching');
+
+/* Add to Cart */
+Route::post('add-to-cart','ProductController@addToCart')->name('add-to-cart');

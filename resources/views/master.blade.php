@@ -11,6 +11,29 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <style>
+        .navbar{
+            background-color:#FFA500;
+        }
+        .footer{
+            background-color:#228B22;
+            color:white;
+        }
+        .footer a{
+            color:white;
+        }
+        .navbar-brand{
+            color:white !important;
+            font-size: 25px;
+        }
+        .navbar-brand:hover{
+            color:black !important;
+        }
+        .navbar-nav li a{
+            color:white !important;
+        }
+        .navbar-nav li a:hover{
+            color:black !important;
+        }
         .custom-container{
             height: 500px;
             padding-top: 100px; 
