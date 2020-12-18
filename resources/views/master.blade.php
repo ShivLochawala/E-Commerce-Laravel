@@ -67,6 +67,9 @@
         .search-box{
             width: 500px !important;
         }
+        .profile-menu li a{
+            color:black !important;
+        }
         .footer{
             text-align:center;
         }

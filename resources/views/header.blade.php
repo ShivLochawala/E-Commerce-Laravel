@@ -1,6 +1,10 @@
 <?php
   use App\Http\Controllers\ProductController;
-  $countCart = ProductController::cartItemCount();
+  if(session()->has('user')){
+    $countCart = ProductController::cartItemCount();
+  }else{
+    $countCart = 0;
+  }
 ?>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -42,10 +46,17 @@
         <button type="submit" class="btn btn-default">Search</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        @if(!session()->has('user'))
-        <li><a href="#">Cart(0)</a></li>
-        @else
         <li><a href="#">Cart({{$countCart}})</a></li>
+        @if(!session()->has('user'))
+        <li><a href="/login">Login</a></li>
+        @else
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{session()->get('user')['name']}} <span class="caret"></span></a>
+          <ul class="dropdown-menu profile-menu">
+            <li><a href="#">Profile</a></li>
+            <li><a href="/logout">Log Out</a></li>
+          </ul>
+        </li>
         @endif
         <!--<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>

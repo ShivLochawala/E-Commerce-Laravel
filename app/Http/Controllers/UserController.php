@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Session;
 
 class UserController extends Controller
 {
@@ -55,4 +56,9 @@ class UserController extends Controller
         ]);
         return redirect('login');
     }
+    public function logout(){
+        Session::flush();
+        Session::forget('user');
+        return redirect('home');
+    } 
 }
