@@ -44,3 +44,4 @@ Route::post('remove-to-cart','ProductController@removeToCart')->name('remove-to-
 /*Order Page */
 Route::get('order-now','ProductController@orderList')->name('order-now');
 Route::post('buy-now','ProductController@buyNow')->name('buy-now');
+Route::get('order-list','ProductController@orderedListed')->name('order-list');

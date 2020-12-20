@@ -89,4 +89,12 @@ class ProductController extends Controller
         }
         return redirect("/");
     }
+    public function orderedListed(){
+        $userId = Session::get('user')['id'];
+        $orderList = DB::table('orders')
+                    ->join('products','products.id','=','orders.product_id')
+                    ->where('orders.user_id',$userId)
+                    ->get();
+        return view('orderList',['OrderLists'=>$orderList]);
+    }
 }
