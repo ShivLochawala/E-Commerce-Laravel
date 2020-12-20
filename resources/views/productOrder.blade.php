@@ -57,7 +57,8 @@
                     <a href='/login'>You want login?</a>
                 @endif
                 <div class="container">
-                    <form action="/buy-now">
+                    <form action="/buy-now" method="POST">
+                        @csrf
                         <div class="form-group">
                         <label for="address">Delivery Address:</label><br>
                         <textarea class="form-control" name="address" id="" rows="5"></textarea>
