@@ -6,7 +6,7 @@
     <h1>Registration</h1>
     <div class="form-group">
         <!--<label for="exampleInputEmail1">Email ID</label>-->
-        <input type="text" class="form-control" name="name" id="Name" aria-describedby="emailHelp" placeholder="Name" value="{{old('name')}}">
+        <input type="text" class="form-control" name="name" id="Name" aria-describedby="nameHelp" placeholder="Name" value="{{old('name')}}">
         @if ($errors->has('name'))
             <span class="error">{{ $errors->first('name') }}</span>
         @endif

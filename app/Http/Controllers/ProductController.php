@@ -97,4 +97,11 @@ class ProductController extends Controller
                     ->get();
         return view('orderList',['OrderLists'=>$orderList]);
     }
+    public function viewProducts(){
+        $data = Product::all();
+        return view('admin.productView',['products'=>$data]);
+    }
+    public function addProduct(){
+        return view('admin.productAdd');
+    }
 }

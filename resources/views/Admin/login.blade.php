@@ -2,7 +2,7 @@
 @section('content')
 <div class="container-fluid custom-container login_panel">
     
-            <form method="POST" action="login-user">
+            <form method="POST" action="login-admin">
             @csrf
             <h1>Login</h1>
             @if($invalid)

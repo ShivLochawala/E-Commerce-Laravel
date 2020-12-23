@@ -12,7 +12,8 @@ class UserController extends Controller
 {
     /*login function */
     public function login(Request $request){
-        return view('login');
+        $invalid = '';
+        return view('login',['invalid'=>$invalid]);
     }
     public function loginUser(Request $request){
         $validatedData = $request->validate([
@@ -25,7 +26,8 @@ class UserController extends Controller
         ]);
         $user = User::where(['email'=>$request->email])->first();
         if(!$user || !Hash::check($request->password, $user->password)){
-            return "Invalid Email id or password";
+            $invalid = "Invalid Email id or password";
+            return view('login',['invalid'=>$invalid]);
         }else{
             $request->session()->put('user',$user);
             return redirect('home');

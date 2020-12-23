@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+/***************** User Side Routes  ******************/
+
 /*Login Route */
 Route::get('/', function () {
     return redirect('home');
@@ -45,3 +48,15 @@ Route::post('remove-to-cart','ProductController@removeToCart')->name('remove-to-
 Route::get('order-now','ProductController@orderList')->name('order-now');
 Route::post('buy-now','ProductController@buyNow')->name('buy-now');
 Route::get('order-list','ProductController@orderedListed')->name('order-list');
+
+/***********************Admin Side Routes ****************************/
+/* Login Related Routes*/
+Route::get('admin-login','AdminController@login')->name('admin-login');
+Route::post('login-admin','AdminController@loginUser')->name('login-admin');
+
+/* Home Related Routes */
+Route::get('admin-home','AdminController@home')->name('admin-home');
+Route::get('/view-products','ProductController@viewProducts')->name('view-products');
+Route::get('/add-product','ProductController@addProduct')->name('add-product');
+/* Logout */
+Route::get('logout','AdminController@logout')->name('logout');
