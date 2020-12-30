@@ -18,7 +18,7 @@
                     <input type="hidden" name="product_id" value="{{$productDetail->id}}">
                     <button class="btn btn-primary">Add To Cart</button>
                 </form>
-                <button class="btn btn-success">Buy Now</button>
+                
             </div>
         </div>
     </div>

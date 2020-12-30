@@ -41,6 +41,7 @@ class ProductController extends Controller
     public function addToCartList(){
         if(Session::has('user')){
             $userId = Session::get('user')['id'];
+            $cartCount = Cart::where('user_id',$userId)->count();
             //$cartList = Cart::where('user_id',$userId)->get();
             //$products = Product::all();
             $cartList = DB::table('cart')
@@ -49,7 +50,7 @@ class ProductController extends Controller
                         ->select('products.*', 'cart.id as cart_id')
                         ->get();
             //return view('productCart',['CartLists'=>$cartList,'Products'=>$products]);
-            return view('productCart',['CartLists'=>$cartList]);
+            return view('productCart',['CartLists'=>$cartList,'cartCount'=>$cartCount]);
         }else{
             return view('productCart');
         }
@@ -102,6 +103,36 @@ class ProductController extends Controller
         return view('admin.productView',['products'=>$data]);
     }
     public function addProduct(){
-        return view('admin.productAdd');
+        return view('admin.productAdd',['successmsg'=>'']);
+    }
+    public function addingProduct(Request $request){
+        $validatedData = $request->validate([
+            'name'        => 'required',
+            'price'       => 'required',
+            'category'    => 'required',
+            'description' => 'required',
+            'gallery'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ],[
+            'name.required'=> 'Name is Required',
+            'price.required'=> 'Price is Required',
+            'category.required'=> 'Category is Required',
+            'description.required'=> 'Description is Required',
+            'gallery.required'=> 'Image is Required'
+        ]);
+        $imageName = time().'.'.$request->gallery->extension();  
+        $request->gallery->storeAs('images', $imageName);
+        /*DB::table('users')->insert([
+            'name'    =>$request->name,
+            'email'   =>$request->email,
+            'password'=>Hash::make($request->password)
+        ]);*/
+        $product = new Product;
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->category = $request->category;
+        $product->description = $request->description;
+        $product->gallery = $imageName;
+        $product->save();
+        return view('admin.productAdd',['successmsg'=>'Product Added Successfully']);
     }
 }

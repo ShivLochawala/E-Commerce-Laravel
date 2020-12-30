@@ -58,5 +58,6 @@ Route::post('login-admin','AdminController@loginUser')->name('login-admin');
 Route::get('admin-home','AdminController@home')->name('admin-home');
 Route::get('/view-products','ProductController@viewProducts')->name('view-products');
 Route::get('/add-product','ProductController@addProduct')->name('add-product');
+Route::post('/adding-product','ProductController@addingProduct')->name('adding-product');
 /* Logout */
 Route::get('logout','AdminController@logout')->name('logout');

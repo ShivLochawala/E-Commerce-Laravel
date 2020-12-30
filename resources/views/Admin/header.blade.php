@@ -41,7 +41,7 @@ div.content {
   padding-top: 52px;
   height: 1000px;
 }
-ul {
+.sidebar ul {
     list-style-type: none;
     margin-left: 0px !important;
     padding: 0px;

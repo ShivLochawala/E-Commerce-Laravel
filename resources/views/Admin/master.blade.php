@@ -14,7 +14,6 @@
         .navbar{
             background-color:#FFA500;
             margin-bottom: 0;
-            overflow: hidden;
             position: fixed;
             top: 0;
             width: 100%;
@@ -82,6 +81,9 @@
         }
         .footer{
             text-align:center;
+        }
+        .error{
+            color:red;
         }
     </style>
 </head>
